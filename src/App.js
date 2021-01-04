@@ -1,8 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const App = (props) => {
   const [state, setState] = useState(props);
   const { name, price } = state;
+
+  useEffect(() => {
+    console.log("this is like componentDidMount");
+  }, []);
+
+  useEffect(() => {
+    console.log("this is like componentDidUpdate");
+  });
+
+  useEffect(() => {
+    console.log("this calback is for name only ");
+  }, [name]);
+
   return (
     <>
       <p>
