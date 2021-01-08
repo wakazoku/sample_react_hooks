@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import AppContext from "../contexts/AppContext";
+
 import { DELETE_EVENT } from "../actions";
 
-const Event = ({ index, event, dispatch }) => {
+const Event = ({ index, event }) => {
+  const { dispatch } = useContext(AppContext);
   const id = event.id;
   const handleClickDeleteButton = (e) => {
     e.preventDefault();
