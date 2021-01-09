@@ -6,7 +6,7 @@ import {
   DELETE_ALL_OPERATION_LOGS,
 } from "../actions";
 import AppContext from "../contexts/AppContext";
-import { timeCurrentIso8601 } from "../utils.js";
+import { timeCurrentAsiaTokyo } from "../utils.js";
 
 const EventForm = () => {
   const { state, dispatch } = useContext(AppContext);
@@ -23,7 +23,7 @@ const EventForm = () => {
     dispatch({
       type: ADD_OPERATION_LOG,
       description: "イベントを作成しました",
-      operatedAt: timeCurrentIso8601(),
+      operatedAt: timeCurrentAsiaTokyo(),
     });
     setTitle("");
     setBody("");
@@ -42,7 +42,7 @@ const EventForm = () => {
       dispatch({
         type: ADD_OPERATION_LOG,
         description: "全てのイベントを削除しました",
-        operatedAt: timeCurrentIso8601(),
+        operatedAt: timeCurrentAsiaTokyo(),
       });
     }
   };
